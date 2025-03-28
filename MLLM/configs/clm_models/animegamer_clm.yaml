@@ -1,0 +1,24 @@
+_target_: MLLM.src.models_clm.models.ContinuousLVLM_Video.from_pretrained
+#_target_: MLLM.src.models_clm.models.ContinuousLVLM_Video
+input_resampler: 
+  _target_: MLLM.src.models.discrete_models.ProjectionLayer
+  num_queries: 226 
+  embed_dim: 1920 
+  input_dim: 1920
+  output_dim: 4096 
+
+output_resampler:
+  _target_: MLLM.src.models.discrete_models.ProjectionLayer
+  num_queries: 226 
+  embed_dim: 1920 
+  input_dim: 4096
+  output_dim: 1920 
+  
+num_frames: 1
+query_pos: False
+learnable_pos: False
+
+lm_loss_scale: 1.0 
+rec_loss_scale: 1.0
+
+pretrained_model_path: 

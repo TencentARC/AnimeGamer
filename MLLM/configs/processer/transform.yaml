@@ -1,0 +1,3 @@
+_target_: src.processer.transforms.get_transform
+type: dc
+image_size: 256

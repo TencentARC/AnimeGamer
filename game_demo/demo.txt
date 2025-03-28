@@ -1,0 +1,8 @@
+Character: Qiqi; Motion: quickly flying on broomstick; Background: day sky.
+Character: Qiqi; Motion: smoothly fly on broomstick; Background: day countryside.
+Character: Qiqi; Motion: gently sit on railing; Background: day town.
+Character: Qiqi; Motion: gently turn head; Background: day town.
+Character: Qiqi; Motion: gently lie down; Background: day grass.
+Character: Qiqi; Motion: gently fly on broomstick; Background: night sky.
+Character: Qiqi; Motion: gently hold broom; Background: night street.
+Character: Qiqi; Motion: gently lie down; Background: night bedroom.

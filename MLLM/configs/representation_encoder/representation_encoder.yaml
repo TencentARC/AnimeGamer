@@ -1,0 +1,4 @@
+_target_: src.models.representation_encoder.MixEmbedder
+hidden_size: 1920
+text_hidden_size: 4096
+ip_hidden_size: 1280

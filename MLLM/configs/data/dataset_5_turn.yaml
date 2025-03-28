@@ -1,0 +1,81 @@
+_target_: src.data.image_text_pairs_clm.build_multi_datapipes
+_recursive_: False
+datapipes:
+
+  - _target_: src.data.data_pipeline.build_datapipeline_world_1turn
+    data_dir:
+      - /Your_data_path
+    max_length: 300
+    batch_size: 16
+    bilateral_attention: True
+    min_aspect_ratio: 0.3
+    min_resolution: 200
+    num_img_tokens: 226 
+    num_frames: 1
+    video_first: False
+    drop_text_ratio: 0.0
+    cycle_count: 128 
+
+  - _target_: src.data.data_pipeline.build_datapipeline_world_2turn
+    data_dir:
+      - /Your_data_path
+    max_length: 600
+    batch_size: 16
+    bilateral_attention: True
+    min_aspect_ratio: 0.3
+    min_resolution: 200
+    num_img_tokens: 226 
+    num_frames: 1
+    video_first: False
+    drop_text_ratio: 0.0
+    cycle_count: 128 
+
+  - _target_: src.data.data_pipeline.build_datapipeline_world_3turn
+    data_dir:
+      - /Your_data_path
+    max_length: 900
+    batch_size: 16
+    bilateral_attention: True
+    min_aspect_ratio: 0.3
+    min_resolution: 200
+    num_img_tokens: 226 
+    num_frames: 1
+    video_first: False
+    drop_text_ratio: 0.0
+    cycle_count: 128 
+
+  - _target_: src.data.data_pipeline.build_datapipeline_world_4turn
+    data_dir:
+      - /Your_data_path
+    max_length: 1200
+    batch_size: 16
+    bilateral_attention: True
+    min_aspect_ratio: 0.3
+    min_resolution: 200
+    num_img_tokens: 226 
+    num_frames: 1
+    video_first: False
+    drop_text_ratio: 0.0
+    cycle_count: 128 
+
+  - _target_: src.data.data_pipeline.build_datapipeline_world_5turn
+    data_dir:
+      - /Your_data_path
+    max_length: 1500
+    batch_size: 16
+    bilateral_attention: True
+    min_aspect_ratio: 0.3
+    min_resolution: 200
+    num_img_tokens: 226 
+    num_frames: 1
+    video_first: False
+    drop_text_ratio: 0.0
+    cycle_count: 128 
+   
+
+sample_weights:
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
