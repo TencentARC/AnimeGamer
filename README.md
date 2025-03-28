@@ -1,4 +1,4 @@
-# <span style="color: #F2C335;">Anime</span><span style="color: #D9666F;">Gamer</span></span>: Infinite Anime Life Simulation with Next Game State Prediction
+# AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction
 
 **[Junhao Cheng<sup>1,2</sup>](https://donahowe.github.io/), 
 [Yuying Ge<sup>1,&#9993;</sup>](https://geyuying.github.io/), 
