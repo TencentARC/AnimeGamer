@@ -58,8 +58,3 @@ Change the instructions in `./game_demo` to customize your play.
 ## 🤗 Acknowledgements
 
 We refer to [CogvideoX](https://github.com/XLabs-AI/x-flux) and [SEED-X](https://github.com/AILab-CVC/SEED-X/tree/main) to build our codebase. Thanks for their wonderful project.
-
-
-## 📜 License
-
-This repository is under the [Apache 2.0 License](https://github.com/mashijie1028/Gen4Rep/blob/main/LICENSE).
