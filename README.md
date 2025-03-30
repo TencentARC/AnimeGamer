@@ -14,6 +14,7 @@
 
 ## 🔎 Introduction
 
+![teaser](assets/Intro2.gif)
 ![teaser](assets/Intro.gif)
 
 We propose AnimeGamer for infinite anime life simulation. AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate each game state, including dynamic animation shots that depict character movements and updates to character states. The overview of AnimeGamer is as follows. The training process consists of three phases:
