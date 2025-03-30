@@ -16,7 +16,7 @@
 
 We propose AnimeGamer for infinite anime life simulation. AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate each game state, including dynamic animation shots that depict character movements and updates to character states, as illustrated in Figure 1.
 
-![teaser](assets/teaser.png)
+![teaser](assets/Intro.gif)
 
 The overview of AnimeGamer is as follows. The training process consists of three phases:
 * (a) We model animation shots using action-aware multimodal representations through an encoder and train a diffusion-based decoder to reconstruct videos, with the additional input of motion scope that indicates action intensity. 
