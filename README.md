@@ -14,14 +14,12 @@
 
 ## 🔎 Introduction
 
-We propose AnimeGamer for infinite anime life simulation. AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate each game state, including dynamic animation shots that depict character movements and updates to character states, as illustrated in Figure 1.
-
 ![teaser](assets/Intro.gif)
 
-The overview of AnimeGamer is as follows. The training process consists of three phases:
+We propose AnimeGamer for infinite anime life simulation. AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate each game state, including dynamic animation shots that depict character movements and updates to character states. The overview of AnimeGamer is as follows. The training process consists of three phases:
 * (a) We model animation shots using action-aware multimodal representations through an encoder and train a diffusion-based decoder to reconstruct videos, with the additional input of motion scope that indicates action intensity. 
 * (b) We train an MLLM to predict the next game state representations by taking the history instructions and game state representations as input.
- * (c) We further enhance the quality of decoded animation shots from the MLLM via an adaptation phase, where the decoder is fine-tuned by taking MLLM's predictions as input.
+* (c) We further enhance the quality of decoded animation shots from the MLLM via an adaptation phase, where the decoder is fine-tuned by taking MLLM's predictions as input.
 
 ![teaser](assets/model.png)
 
@@ -35,7 +33,7 @@ The overview of AnimeGamer is as follows. The training process consists of three
 ## 🔜 TODOs
 - [ ] Release training codes 
 - [ ] Release inference codes 
-- [ ] Release models weights 
+- [ ] release wights of models trained on "Qiqi's Delivery Service" and "Ponyo on the Cliff" seperately. 
 
 ## 📏 Inference
 
