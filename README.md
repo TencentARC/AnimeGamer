@@ -23,7 +23,7 @@ You can step into the shoes of Sosuke from "Ponyo on the Cliff" and interact wit
 and the forest background), and updates to character states including stamina, social, and entertainment values.
 
 ![teaser](assets/Intro2.gif)
-With AnimeGamer, you can bring together beloved characters like Qiqi from "Qiqi's Delivery Service" and Pazu from "Castle in the Sky" to meet and interact in the anime world. Imagine Pazu mastering Qiqi's broom-flying skills, creating unique and magical experiences. 
+With AnimeGamer, you can bring together beloved characters like Qiqi from "Qiqi's Delivery Service" and Pazu from "Castle in the Sky" to meet and interact in the anime world. Imagine Pazu mastering Qiqi's broom-flying skills, creating unique and magical experiences. AnimeGamer can generalize interactions between characters from different anime films and character actions, with the potential for endless possibilities.
 
 ## :book: Method
 
