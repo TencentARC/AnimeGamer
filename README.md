@@ -16,7 +16,7 @@
 
 
 ## 🔎 Introduction
-**Experience the endless adventure of infinite anime life with AnimeGamer!** :hugs:
+**Experience the endless adventure of infinite anime life with AnimeGamer!** 🤩
 ![teaser](assets/Intro.gif)
 
 You can step into the shoes of Sosuke from "Ponyo on the Cliff" and interact with a dynamic game world through open-ended language instructions. AnimeGamer generates consistent multi-turn game states, consisting of dynamic animation shots (i.e., videos ) with contextual consistency (e.g., the purple car
