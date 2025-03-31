@@ -10,8 +10,8 @@
 <sup>2</sup>City University of Hong Kong
 <br>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2404.14396-b31b1b.svg)](https://arxiv.org/abs/2404.14396)
 [![Project Page](https://img.shields.io/badge/Project-blue)](https://howe125.github.io/AnimeGamer.github.io/)
+[![arXiv](https://img.shields.io/badge/arXiv-2404.14396-b31b1b.svg)](https://arxiv.org/abs/2404.14396)
 [![Static Badge](https://img.shields.io/badge/Model-Huggingface-yellow)](https://huggingface.co/TencentARC/AnimeGamer)
 
 
