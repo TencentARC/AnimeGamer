@@ -10,20 +10,29 @@
 <sup>2</sup>City University of Hong Kong
 <br>
 
+[![arXiv](https://img.shields.io/badge/arXiv-2404.14396-b31b1b.svg)](https://arxiv.org/abs/2404.14396)
+[![Project Page](https://img.shields.io/badge/Project-blue)](https://howe125.github.io/AnimeGamer.github.io/)
+[![Static Badge](https://img.shields.io/badge/Model-Huggingface-yellow)](https://huggingface.co/TencentARC/AnimeGamer)
 
 
 ## 🔎 Introduction
-
+**Experience the endless adventure of infinite anime life with AnimeGamer!** :hugs:
 ![teaser](assets/Intro.gif)
+
+You can step into the shoes of Sosuke from "Ponyo on the Cliff" and interact with a dynamic game world through open-ended language instructions. AnimeGamer generates consistent multi-turn game states, consisting of dynamic animation shots (i.e., videos ) with contextual consistency (e.g., the purple car
+and the forest background), and updates to character states including stamina, social, and entertainment values.
+
 ![teaser](assets/Intro2.gif)
+With AnimeGamer, you can bring together beloved characters like Qiqi from "Qiqi's Delivery Service" and Pazu from "Castle in the Sky" to meet and interact in the anime world. Imagine Pazu mastering Qiqi's broom-flying skills, creating unique and magical experiences. 
 
+## :book: Method
 
-We propose AnimeGamer for infinite anime life simulation. AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate each game state, including dynamic animation shots that depict character movements and updates to character states. The overview of AnimeGamer is as follows. The training process consists of three phases:
+![teaser](assets/model.png)
+
+AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate each game state, including dynamic animation shots that depict character movements and updates to character states. The overview of AnimeGamer is as follows. The training process consists of three phases:
 * (a) We model animation shots using action-aware multimodal representations through an encoder and train a diffusion-based decoder to reconstruct videos, with the additional input of motion scope that indicates action intensity. 
 * (b) We train an MLLM to predict the next game state representations by taking the history instructions and game state representations as input.
 * (c) We further enhance the quality of decoded animation shots from the MLLM via an adaptation phase, where the decoder is fine-tuned by taking MLLM's predictions as input.
-
-![teaser](assets/model.png)
 
 
 
@@ -33,9 +42,10 @@ We propose AnimeGamer for infinite anime life simulation. AnimeGamer is built up
 
 
 ## 🔜 TODOs
+- [ ] release wights of models trained on a mixture of anime films (the same setting as in our paper)
 - [ ] Release training codes 
 - [ ] Release inference codes 
-- [ ] release wights of models trained on "Qiqi's Delivery Service" and "Ponyo on the Cliff" seperately. 
+- [ ] release seperate wights of models trained on "Qiqi's Delivery Service" and "Ponyo on the Cliff" individually. 
 
 ## 📏 Inference
 
