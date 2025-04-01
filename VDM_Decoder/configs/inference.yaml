@@ -1,0 +1,13 @@
+args:
+  image2video: False
+  latent_channels: 16
+  mode: inference
+  load: "./checkpoints/Game-Qiqi/VDM_Decoder"
+  batch_size: 1
+  sampling_image_size: [480, 720] 
+  sampling_num_frames: 5  
+  sampling_fps: 8
+  fp16: True 
+  output_dir: ./results/videos
+  LLM_output_path: ./results/multimodal_representations/mllm-output.pt
+  force_inference: True 

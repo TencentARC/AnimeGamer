@@ -1,0 +1,31 @@
+{
+  "alpha_pattern": {},
+  "auto_mapping": {
+    "base_model_class": "PerceptualModel",
+    "parent_library": "dreamsim.model"
+  },
+  "base_model_name_or_path": null,
+  "bias": "none",
+  "fan_in_fan_out": false,
+  "inference_mode": true,
+  "init_lora_weights": true,
+  "layer_replication": null,
+  "layers_pattern": null,
+  "layers_to_transform": null,
+  "loftq_config": {},
+  "lora_alpha": 1.0,
+  "lora_dropout": 0.3,
+  "megatron_config": null,
+  "megatron_core": "megatron.core",
+  "modules_to_save": null,
+  "peft_type": "LORA",
+  "r": 16,
+  "rank_pattern": {},
+  "revision": null,
+  "target_modules": [
+    "qkv"
+  ],
+  "task_type": null,
+  "use_dora": false,
+  "use_rslora": false
+}

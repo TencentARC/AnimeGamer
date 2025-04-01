@@ -69,7 +69,7 @@ save_dir = './results/multimodal_representations'
 os.makedirs(save_dir, exist_ok=True)
 
 # Simulation parameters
-max_window = 1
+max_window = 2
 step_by_step = True 
 
 # Load configurations and instantiate models
