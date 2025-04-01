@@ -38,14 +38,14 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 
 ## 📅 News
 
+* [2025-04-01] Release inference codes. 🔥🔥🔥
 * [2025-03-28] Create the repository. 🔥🔥🔥
 
 
 ## 🔜 TODOs
-- [ ] release wights of models trained on a mixture of anime films (the same setting as in our paper)
-- [ ] Release training codes 
-- [ ] Release inference codes 
 - [ ] release seperate wights of models trained on "Qiqi's Delivery Service" and "Ponyo on the Cliff" individually. 
+- [ ] Release training codes 
+- [ ] release wights of models trained on a mixture of anime films (the same setting as in our paper)
 
 ## 📏 Inference
 
