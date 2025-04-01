@@ -21,4 +21,4 @@ learnable_pos: False
 lm_loss_scale: 1.0 
 rec_loss_scale: 1.0
 
-pretrained_model_path: 
+pretrained_model_path: ./checkpoints/Game-Qiqi/MLLM/pytorch_model.bin

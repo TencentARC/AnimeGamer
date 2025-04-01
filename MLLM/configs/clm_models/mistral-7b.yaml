@@ -1,7 +1,7 @@
 _target_: MLLM.src.models_clm.peft_models.peft_model_animegamer
 model:
   _target_: MLLM.src.models.mistral.modeling_mistral.MistralForCausalLM.from_pretrained
-  pretrained_model_name_or_path: 
+  pretrained_model_name_or_path: ./checkpoints/Mistral-7B-Instruct-v0.1 # Path to Mistral-7B-Instruct-v0.1
   low_cpu_mem_usage: True
 peft_config:
   _target_: peft.LoraConfig
