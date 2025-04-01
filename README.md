@@ -3,7 +3,7 @@
 **[Junhao Cheng<sup>1,2</sup>](https://donahowe.github.io/), 
 [Yuying Ge<sup>1,&#9993;</sup>](https://geyuying.github.io/), 
 [Yixiao Ge<sup>1</sup>](https://geyixiao.com/), 
-[Jing Liao<sup>2</sup>](https://scholar.google.com/citations?user=3s9f9VIAAAAJ&hl=zh-CN), 
+[Jing Liao<sup>2</sup>](https://scholar.google.com/citations?user=3s9f9VIAAAAJ&hl=en), 
 [Ying Shan<sup>1</sup>](https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en)**
 <br>
 <sup>1</sup>ARC Lab, Tencent PCG, 
