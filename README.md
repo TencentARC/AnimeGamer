@@ -52,7 +52,7 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 
 ## 📏 Inference
 
-Please first download the checkpoints of [AnimeGamer](https://huggingface.co/msj9817/GenHancer/) and [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1), and save them under the folder `./checkpoints`.
+Please first download the checkpoints of [AnimeGamer](https://huggingface.co/TencentARC/AnimeGamer) and [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1), and save them under the folder `./checkpoints`.
 
 To generate action-aware multimodal representations and update character states, you can run:
 ```shell
