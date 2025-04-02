@@ -38,7 +38,8 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 
 ## 📅 News
 
-* [2025-04-01] Release wights of models trained on "Qiqi's Delivery Service" 🔥🔥🔥
+* [2025-04-02] Release wights of models trained on "Qiqi's Delivery Service" 🔥🔥🔥
+* [2025-04-02] Release paper in [arXiv](https://arxiv.org/abs/2504.01014) 🔥🔥🔥
 * [2025-04-01] Release inference codes 🔥🔥🔥
 * [2025-03-28] Create the repository 🔥🔥🔥
 
