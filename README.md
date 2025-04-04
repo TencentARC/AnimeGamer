@@ -50,9 +50,6 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 - [ ] Release wights of models trained on a mixture of anime films (the same setting as in our paper)
 
 ## 📏 Quick Start
-
-Please first download the checkpoints of [AnimeGamer](https://huggingface.co/TencentARC/AnimeGamer) and [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1), and save them under the folder `./checkpoints`.
-
 To set up the environment for inference, you can run the following command:
 ```shell
 git clone https://github.com/TencentARC/AnimeGamer.git
@@ -60,6 +57,10 @@ cd AnimeGamer
 conda create -n animegamer python==3.10 -y
 conda activate animegamer
 pip install -r requirements.txt
+cd checkpoints
+git clone https://huggingface.co/TencentARC/AnimeGamer
+git clone https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1
+git clone https://huggingface.co/Gluttony10/CogVideoX-2b-sat
 ```
 
 To generate action-aware multimodal representations and update character states, you can run:
@@ -78,7 +79,7 @@ Change the instructions in `./game_demo` to customize your play.
 
 ## 🤗 Acknowledgements
 
-We refer to [CogvideoX](https://github.com/XLabs-AI/x-flux) and [SEED-X](https://github.com/AILab-CVC/SEED-X/tree/main) to build our codebase. Thanks for their wonderful project.
+We refer to [CogvideoX](https://github.com/THUDM/CogVideo) and [SEED-X](https://github.com/AILab-CVC/SEED-X) to build our codebase. Thanks for their wonderful project.
 
 
 

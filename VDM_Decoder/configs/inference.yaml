@@ -2,7 +2,7 @@ args:
   image2video: False
   latent_channels: 16
   mode: inference
-  load: "./checkpoints/Game-Qiqi/VDM_Decoder"
+  load: "./checkpoints/AnimeGamer/VDM_Decoder-Qiqi"
   batch_size: 1
   sampling_image_size: [480, 720] 
   sampling_num_frames: 5  

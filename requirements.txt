@@ -27,9 +27,9 @@ pillow==9.5.0
 scikit-video
 safetensors
 tokenizers==0.19
-xformers
-torch==2.4.0
-torchvision==0.19.0
+xformers==0.0.28.post2
+torch==2.5.0
+torchvision==0.20.0
 wandb==0.17.5
 pytorch_lightning==2.3.3
 open_clip_torch==2.22.0
@@ -39,3 +39,6 @@ scipy==1.14.0
 loguru
 SwissArmyTransformer==0.4.12
 omegaconf==2.3.0
+bitsandbytes
+huggingface_hub[hf_xet]
+triton
