@@ -92,7 +92,7 @@ model:
           ucg_rate: 0.1
           target: VDM_Decoder.sgm.modules.encoders.modules.FrozenT5Embedder
           params:
-            model_dir: "/group/40034/junhaocheng/CogVideo/CogVideoX-2b-sat/t5-v1_1-xxl"
+            model_dir: "google/t5-v1_1-xxl"
             max_length: 226
             is_plan_3: True
 
@@ -100,7 +100,7 @@ model:
     target: VDM_Decoder.vae_modules.autoencoder.VideoAutoencoderInferenceWrapper
     params:
       cp_size: 1
-      ckpt_path: "/group/40034/junhaocheng/CogVideo/CogVideoX-2b-sat/vae/3d-vae.pt"
+      ckpt_path: "./checkpoints/vae/3d-vae.pt"
       ignore_keys: [ 'loss' ]
 
       loss_config:
