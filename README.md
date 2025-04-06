@@ -49,7 +49,9 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 - [ ] Release training codes 
 - [ ] Release wights of models trained on a mixture of anime films (the same setting as in our paper)
 
-## 📏 Quick Start
+## 🚀 Quick Start
+
+📏 **This inference codes are designed for low VRAM (24GB VRAM is enough), where the MLLM and the VDM_Decoder are run separately.**
 
 Please first download the checkpoints of [AnimeGamer](https://huggingface.co/TencentARC/AnimeGamer) and [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1), and save them under the folder `./checkpoints`.
 
