@@ -53,8 +53,6 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 
 📏 **This inference codes are designed for low VRAM (24GB VRAM is enough), where the MLLM and the VDM_Decoder are run separately.**
 
-Please first download the checkpoints of [AnimeGamer](https://huggingface.co/TencentARC/AnimeGamer) and [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1), and save them under the folder `./checkpoints`.
-
 To set up the environment for inference, you can run the following command:
 ```shell
 git clone https://github.com/TencentARC/AnimeGamer.git
@@ -63,6 +61,16 @@ conda create -n animegamer python==3.10 -y
 conda activate animegamer
 pip install -r requirements.txt
 ```
+
+Please first download the checkpoints of [AnimeGamer](https://huggingface.co/TencentARC/AnimeGamer) and [Mistral-7B](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1), and save them under the folder `./checkpoints`.
+Then you should download the 3D-VAE of CogvideoX:
+```shell
+cd checkpoints
+wget https://cloud.tsinghua.edu.cn/f/fdba7608a49c463ba754/?dl=1
+mv 'index.html?dl=1' vae.zip
+unzip vae.zip
+```
+
 
 To generate action-aware multimodal representations and update character states, you can run:
 ```shell
