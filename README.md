@@ -87,5 +87,10 @@ We refer to [CogvideoX](https://github.com/XLabs-AI/x-flux) and [SEED-X](https:/
 If you find this work helpful, please consider citing:
 
 ```BibTeXw
-  TODO
+@article{cheng2025animegamer,
+  title={AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction},
+  author={Cheng, Junhao and Ge, Yuying and Ge, Yixiao and Liao, Jing and Shan, Ying},
+  journal={arXiv preprint arXiv:2504.01014},
+  year={2025}
+}
 ```
