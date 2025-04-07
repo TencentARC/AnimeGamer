@@ -45,6 +45,7 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 
 
 ## 🔜 TODOs
+- [ ] Release gradio demo (interactive generation)
 - [ ] Release data processing pipeline
 - [ ] Release training codes 
 - [ ] Release wights of models trained on a mixture of anime films (the same setting as in our paper)
