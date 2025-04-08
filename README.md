@@ -56,7 +56,7 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 
 ## 🚀 Quick Start
 
-### 🧪 Environment Setup
+### 🔮 Environment Setup
 
 To set up the environment for inference, you can run the following command:
 ```shell
@@ -82,7 +82,7 @@ python app.py
 ```
 This Gradio demo is designed for low VRAM, where the MLLM and the VDM Decoder are deployed on two GPUs (each with at least 24G VRAM). If you wish to deploy on a single GPU (at least 40G VRAM), please set `LOV_VRAM_VERSION = False`.
 
-### 📏 Inference
+### 🪄 Inference
 To generate action-aware multimodal representations and update character states, you can run:
 ```shell
 python inference_MLLM.py 
