@@ -76,7 +76,7 @@ mv 'index.html?dl=1' vae.zip
 unzip vae.zip
 ```
 ### 🧸 Gradio 
-To launch local gradio demo:
+To run local gradio demo:
 ```shell
 python app.py 
 ```
