@@ -45,14 +45,18 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 
 
 ## 🔜 TODOs
-- [ ] Release gradio demo (interactive generation)
+- [x] Release gradio demo (interactive generation)
 - [ ] Release data processing pipeline
 - [ ] Release training codes 
 - [ ] Release wights of models trained on a mixture of anime films (the same setting as in our paper)
 
+
+
+
+
 ## 🚀 Quick Start
 
-📏 **This inference codes are designed for low VRAM (24GB VRAM is enough), where the MLLM and the VDM_Decoder are run separately.**
+### 🧪 Environment Setup
 
 To set up the environment for inference, you can run the following command:
 ```shell
@@ -71,8 +75,14 @@ wget https://cloud.tsinghua.edu.cn/f/fdba7608a49c463ba754/?dl=1
 mv 'index.html?dl=1' vae.zip
 unzip vae.zip
 ```
+### 🧸 Gradio 
+To launch local gradio demo:
+```shell
+python app.py 
+```
+This Gradio demo is designed for low VRAM, where the MLLM and the VDM Decoder are deployed on two GPUs (each with at least 24G VRAM). If you wish to deploy on a single GPU (at least 40G VRAM), please set `LOV_VRAM_VERSION = False`.
 
-
+### 📏 Inference
 To generate action-aware multimodal representations and update character states, you can run:
 ```shell
 python inference_MLLM.py 
