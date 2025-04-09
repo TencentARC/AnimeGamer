@@ -38,6 +38,7 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 
 ## 📅 News
 
+* [2025-04-09] Release local gradio demo (interactive generation)🔥🔥🔥
 * [2025-04-02] Release wights of models separately trained on "Qiqi's Delivery Service" and "Ponyo on the cliff" 🔥
 * [2025-04-02] Release paper in [arXiv](https://arxiv.org/abs/2504.01014) 🔥🔥🔥
 * [2025-04-01] Release inference codes 🔥🔥🔥
@@ -45,7 +46,6 @@ AnimeGamer is built upon Multimodal Large Language Models (MLLMs) to generate ea
 
 
 ## 🔜 TODOs
-- [x] Release gradio demo (interactive generation)
 - [ ] Release data processing pipeline
 - [ ] Release training codes 
 - [ ] Release wights of models trained on a mixture of anime films (the same setting as in our paper)
