@@ -68,11 +68,11 @@ def cuculate_level(tire):
     if motion == 1:
         tire = 0.5
     elif motion == 2:
-        tire = 2.5
+        tire = 1
     elif motion == 3:
-        tire = 10
+        tire = 5
     elif motion == 4:
-        tire = 15
+        tire = 20
     else:
         tire = 40
     return tire
@@ -406,6 +406,11 @@ def generate_animation(history, characters, motion_adverb, motion, time, backgro
     entertainment = copy.deepcopy(global_entertainment)
     social = copy.deepcopy(global_social)
 
+    if pred_character_states[2] == 0:
+        entertainment = entertainment - 5
+    if pred_character_states[1] == 0:
+        social = social - 5
+
     generate_Decoder(pred_character_states[1], vid_output.to(animegamer.device_vdm), video_path)
 
     print(social, stamina, entertainment)
@@ -588,7 +593,7 @@ with gr.Blocks(theme=gr.themes.Default()) as demo:
     gr.Markdown(title)
 
     with gr.Row():
-        with gr.Column(scale=1):
+        with gr.Column(scale=5):
             video_dir = gr.Textbox(
                 label="Video Output Directory",
                 value=DEFAULT_VIDEO_DIR,
@@ -604,7 +609,7 @@ with gr.Blocks(theme=gr.themes.Default()) as demo:
                 submit_btn = gr.Button("Generate Animation", variant="primary")
                 restart_btn = gr.Button("Restart Conversation", variant="stop")
         
-        with gr.Column(scale=1):
+        with gr.Column(scale=5):
             video_output = gr.Video(
                 label="Current Animation",
                 format="mp4",
