@@ -637,4 +637,4 @@ css = """
 demo.css = css
 
 if __name__ == "__main__":
-    demo.launch(server_name='11.216.57.124', server_port=80, allowed_paths=[DEFAULT_VIDEO_DIR]) 
+    demo.launch(server_name='0.0.0.0', allowed_paths=[DEFAULT_VIDEO_DIR]) 
