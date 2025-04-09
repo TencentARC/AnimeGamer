@@ -30,7 +30,7 @@ from decord import VideoReader
 import decord
 import torchvision.transforms as transforms
 DEFAULT_VIDEO_DIR = "./results/gradio_demo"
-LOV_VRAM_VERSION = True
+LOW_VRAM_VERSION = True
 
 os.makedirs(DEFAULT_VIDEO_DIR, exist_ok=True)
 
@@ -115,7 +115,7 @@ class AnimeGamer:
         self.dtype = torch.bfloat16
         self.dtype_str = 'bf16'
         global LOV_VRAM_VERSION
-        if LOV_VRAM_VERSION:
+        if LOW_VRAM_VERSION:
             self.device_vdm = 'cuda:0'
             self.device_mllm = 'cuda:1'
         else:
