@@ -589,7 +589,7 @@ with gr.Blocks(theme=gr.themes.Default()) as demo:
     state = gr.State()
     history = gr.State(value=[])
     
-    title = r"""<h1 align="center">🔮🧹 AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction</h1>"""
+    title = r"""<h1 align="center">🪄💖 AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction 🧹🔮</h1>"""
     gr.Markdown(title)
 
     with gr.Row():
