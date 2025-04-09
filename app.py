@@ -60,8 +60,7 @@ op4 = r'<ET>(.*?)</ET>'
 op5 = r'<ST>(.*?)</ST>'
 op6 = r'<ML>(.*?)</ML>'
 
-def format_world_strength(index):
-    return STTOKEN.format(character_states[gen_turn_id][index])
+
 
 def cuculate_level(tire):
     motion = int(tire)
@@ -214,7 +213,10 @@ def generate_MLLM(history, characters, motion_adverb, motion, time, background):
             else:
                 turn = turn_locate
                 emb_start = 0
-                emb_end = emb_start + max_window                    
+                emb_end = emb_start + max_window  
+
+            def format_world_strength(index):
+                return STTOKEN.format(character_states[gen_turn_id][index])
 
             caption = instructions[turn]
             SC = character_states[turn][0]
@@ -222,7 +224,7 @@ def generate_MLLM(history, characters, motion_adverb, motion, time, background):
             ST = character_states[turn][2]
             ML = character_states[turn][3]
             caption = WORLD_BTURN_TOKEN + caption
-            caption_ids = tokenizer.encode(caption, add_special_tokens=False)
+            caption_ids = animegamer.tokenizer.encode(caption, add_special_tokens=False)
 
             # Construct the world tokens string
             world_tokens = (
@@ -239,12 +241,12 @@ def generate_MLLM(history, characters, motion_adverb, motion, time, background):
             )
         
             # Encode the world tokens
-            world_ids = tokenizer.encode(world_tokens, add_special_tokens=False)
+            world_ids = animegamer.tokenizer.encode(world_tokens, add_special_tokens=False)
             # Construct the video tokens string
             frame_tokens = ''.join([FRAME_TOKEN.format(int(item)) for item in range(animegamer.num_mm_tokens)])
             video_tokens = MM_BOI_TOKEN + (BOI_TOKEN + frame_tokens + EOI_TOKEN) * 1 + MM_EOI_TOKEN
             # Encode the video tokens
-            video_ids = tokenizer.encode(video_tokens, add_special_tokens=False)
+            video_ids = animegamer.tokenizer.encode(video_tokens, add_special_tokens=False)
             # Combine input IDs
             input_ids += caption_ids + video_ids + world_ids
             # Update attention mask
@@ -573,7 +575,6 @@ def restart_conversation(video_dir):
     Path(video_dir).mkdir(parents=True, exist_ok=True)
 
     return [
-        None,               # state
         [],                 # history
         None,               # video_output
         "Qiqi",             # characters
