@@ -1,6 +1,7 @@
 import gradio as gr
 import numpy as np
 import os
+
 from pathlib import Path
 import hydra
 from omegaconf import OmegaConf
@@ -114,7 +115,7 @@ class AnimeGamer:
     def __init__(self) -> None:
         self.dtype = torch.bfloat16
         self.dtype_str = 'bf16'
-        global LOV_VRAM_VERSION
+        global LOW_VRAM_VERSION
         if LOW_VRAM_VERSION:
             self.device_vdm = 'cuda:0'
             self.device_mllm = 'cuda:1'
@@ -175,14 +176,14 @@ global_stamina = 50
 global_entertainment = 50
 global_social = 50
 
-def generate_MLLM(history,characters,motion,background):    
+def generate_MLLM(history, characters, motion_adverb, motion, time, background):    
     max_window = animegamer.max_window
     gen_turn_id = len(history)
     total_turn = 50
     if gen_turn_id == 0:
         character_states = [[0, 0, 0, 0] for i in range(total_turn)]
         mix_emb = torch.zeros([1, total_turn, 226, 1920]).to(animegamer.device_mllm).to(animegamer.dtype)    
-        instructions = [f'Character: {characters}; Motion: {motion}; Background: {background}.']
+        instructions = [f'Character: {characters}; Motion: {motion_adverb} {motion}; Background: {time} {background}.']
     else:
         instructions = history[-1]['instructions']
         instructions.append(f'Character: {characters}; Motion: {motion}; Background: {background}.')
@@ -385,12 +386,12 @@ def generate_Decoder(ml, vid_output, video_path):
             save_video_as_grid_and_mp4(samples, video_path, fps=animegamer.sampling_fps)
 
 
-def generate_animation(history, characters, motion, background, video_dir):
+def generate_animation(history, characters, motion_adverb, motion, time, background, video_dir):
     Path(video_dir).mkdir(parents=True, exist_ok=True)
     video_filename = f"{len(history)+1}.mp4"
     video_path = os.path.abspath(os.path.join(video_dir, video_filename))
 
-    vid_output, pred_character_states, mix_emb, character_states, instructions = generate_MLLM(history,characters,motion,background)
+    vid_output, pred_character_states, mix_emb, character_states, instructions = generate_MLLM(history, characters, motion_adverb, motion, time, background)
 
     def constrain(value):
         return max(0, min(100, value))
@@ -411,11 +412,13 @@ def generate_animation(history, characters, motion, background, video_dir):
 
     return mix_emb, video_path, stamina, entertainment, social, vid_output, character_states, instructions
 
-def process_input(characters, motion, background, video_dir, history):
+def process_input(characters, motion_adverb, motion, time, background, video_dir, history):
     mix_emb, video_path, stamina, entertainment, social, vid_output, character_states, instructions = generate_animation(
         history=history,
         characters=characters,
+        motion_adverb=motion_adverb,
         motion=motion,
+        time=time,
         background=background,
         video_dir=video_dir,
     )
@@ -423,8 +426,8 @@ def process_input(characters, motion, background, video_dir, history):
     new_entry = {
         "round": len(history) + 1,
         "characters": characters,
-        "motion": motion,
-        "background": background,
+        "motion": f"{motion_adverb} {motion}",
+        "background": f"{time} {background}",
         "video_path": video_path,
         "stamina": round(stamina, 1),
         "entertainment": round(entertainment, 1),
@@ -436,7 +439,7 @@ def process_input(characters, motion, background, video_dir, history):
     updated_history = history + [new_entry]
     
     history_html = generate_history_html(updated_history)
-    return video_path, "Qiqi", "", "", updated_history, history_html
+    return video_path, characters, motion_adverb, motion, time, background, updated_history, history_html
 
 def get_color_class(value):
     if value < 30:
@@ -563,22 +566,25 @@ def generate_progress_cell(value):
 
 def restart_conversation(video_dir):
     Path(video_dir).mkdir(parents=True, exist_ok=True)
+
     return [
-        None,   # state
-        [],     # history
-        None,   # video_output
-        "Qiqi", # characters
-        "",     # motion
-        "",     # background
-        "",     # history_display
-        video_dir
+        None,               # state
+        [],                 # history
+        None,               # video_output
+        "Qiqi",             # characters
+        "quickly",          # motion_adverb
+        "fly on broomstick",# motion
+        "day/night",        # time
+        "sky",              # background
+        "",                 # history_display
+        video_dir,
     ]
 
 with gr.Blocks(theme=gr.themes.Default()) as demo:
     state = gr.State()
     history = gr.State(value=[])
     
-    title = r"""<h1 align="center">🤩 AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction</h1>"""
+    title = r"""<h1 align="center">🔮🧹 AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction</h1>"""
     gr.Markdown(title)
 
     with gr.Row():
@@ -588,9 +594,12 @@ with gr.Blocks(theme=gr.themes.Default()) as demo:
                 value=DEFAULT_VIDEO_DIR,
                 placeholder="Enter output directory path..."
             )
-            characters = gr.Textbox(label="Characters",value="Qiqi")
-            motion = gr.Textbox(label="Motion")
-            background = gr.Textbox(label="Background")
+            characters = gr.Textbox(label="Characters", value = "Qiqi")
+            motion_adverb = gr.Textbox(label="Motion Adverb", value = "quickly")
+            motion = gr.Textbox(label="Motion", value = "fly on broomstick")
+            time = gr.Textbox(label="Time", value = "day/night")
+            background = gr.Textbox(label="Background", value = "sky")
+            
             with gr.Row():
                 submit_btn = gr.Button("Generate Animation", variant="primary")
                 restart_btn = gr.Button("Restart Conversation", variant="stop")
@@ -610,14 +619,14 @@ with gr.Blocks(theme=gr.themes.Default()) as demo:
 
     submit_btn.click(
         fn=process_input,
-        inputs=[characters, motion, background, video_dir, history],
-        outputs=[video_output, characters, motion, background, history, history_display]
+        inputs=[characters, motion_adverb, motion, time, background, video_dir, history],
+        outputs=[video_output, characters, motion_adverb, motion, time, background, history, history_display]
     )
     
     restart_btn.click(
         fn=restart_conversation,
         inputs=[video_dir],
-        outputs=[history, video_output, characters, motion, background, history_display, video_dir]
+        outputs=[history, video_output, characters, motion_adverb, motion, time, background, history_display, video_dir]
     )
 
 css = """
