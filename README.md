@@ -80,7 +80,7 @@ To run local gradio demo:
 ```shell
 python app.py 
 ```
-This Gradio demo is designed for low VRAM, where the MLLM and the VDM Decoder are deployed on two GPUs (each with at least 24G VRAM). If you wish to deploy on a single GPU (at least 40G VRAM), please set `LOW_VRAM_VERSION = False`.
+This Gradio demo is designed for low VRAM, where the MLLM and the VDM Decoder are deployed on two GPUs (each with at least 24G VRAM). If you wish to deploy on a single GPU (at least 60G VRAM), please set `LOW_VRAM_VERSION = False`.
 
 ### 🪄 Inference
 To generate action-aware multimodal representations and update character states, you can run:
